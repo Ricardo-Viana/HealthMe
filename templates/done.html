@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Done
+{% endblock %}
+
+{% block main3 %}
+<main class="container p-5">
+    <h2>Hello {{ username }}, here are all of your workouts.</h2><br>
+    <h3>Stay Strong And Keep Focus</h3>
+    {% for workout in exercises %}
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{workout.exercisesname}}</h5>
+            <small>{{workout.time}}</small>
+            <class="mb-1">
+            <form action="/delete" method="post">
+            <button type="submit" name="DeleteButton" value="{{workout.exercisesname}}" class="btn btn-danger">DELETE!</button>
+            </form>
+        </div>
+        {% if workout.type == "ANAEROBIC" %}
+        <h4 class="mb-1">REPS: {{workout.repsortimes.upper()}} {{workout.type}}</h4>
+        <h3 class="mb-1">
+            <form action="/search" method="post" target="_blank">
+            <button type="submit" name="SearchButton" value="{{workout.exercisesname}}" class="btn btn-success">SEARCH!</button>
+            </form>
+        </h3>
+        {% endif %}
+        {% if workout.type == "AEROBIC" %}
+        <h4 class="mb-1">TIME: {{workout.repsortimes.upper()}} {{workout.type}}</h4>
+        <class="mb-1">
+            <form action="/search" method="post" target="_blank">
+            <button type="submit" name="SearchButton" value="{{workout.exercisesname}}" class="btn btn-success">SEARCH!</button>
+            </form>
+        {% endif %}
+        </a>
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}

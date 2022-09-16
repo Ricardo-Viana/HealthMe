@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Exercises
+{% endblock %}
+
+{% block main2 %}
+<main class="container p-5">
+    <h2>ANAEROBIC</h2>
+    <form action="/exercises" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="workoutName" placeholder="WorkOut" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="reps" placeholder="Reps (e.g.: 1 x 20)" type="text">
+        </div>
+        <button type="submit" name="anButton" value="anButton" class="btn btn-light">Let's do more!</button>
+    </form>
+    <h2>AEROBIC</h2>
+    <form action="/exercises" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="workoutName1" placeholder="WorkOut" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="time" placeholder="Time (e.g.: 30s)" type="text">
+        </div>
+        <button type="submit" name="aeButton" value="aeButton" class="btn btn-light">Let's do more!</button>
+    </form>
+</main>
+{% endblock %}

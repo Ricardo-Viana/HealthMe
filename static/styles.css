@@ -1,0 +1,33 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+nav
+{
+    background-color:#C8E6C9;
+}
+
+nav .navbar-brand .green
+{
+    color:#C8E6C9;
+}
+
+main .form-control
+{
+    display: inline-block;
+
+    width: auto;
+}
+
+main
+{
+    overflow-x: auto;
+    text-align: center;
+}
+
+body
+{
+    background-color: #C8E6C9;
+}
+
